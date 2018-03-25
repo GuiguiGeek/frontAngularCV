@@ -1,0 +1,13 @@
+<h1> Données récupérées du webservice rest : toto</h1>
+<div *ngIf="contact">
+	<h2>
+		<label>
+			Détail du contact : {{ contact.nom | uppercase }} {{ contact.prenom }}
+		</label>
+		<label>
+			id : {{ contact.id }}
+			email : {{ contact.email }}
+			adresse : {{ contact.adresse }}
+		</label>
+	</h2>
+</div>
