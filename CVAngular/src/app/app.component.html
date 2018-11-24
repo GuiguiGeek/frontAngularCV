@@ -1,9 +1,67 @@
-<h1>
-	Welcome to {{ title }}!
-</h1>
-<nav>
-	<a routerLink="/dashboard">tableau de bord</a>
-	<a routerLink="/heroes">Heroes</a>
-</nav>
+<header>
+	<mat-sidenav-container class="menu-mobile">
+		<mat-sidenav #sidenav mode="side" [(opened)]="opened">
+			<div class="menu-vertical">
+				<button mat-button [matMenuTriggerFor]="menuCV">
+					CVMob
+				</button>
+				<mat-menu #menuCV="matMenu">
+				  <button mat-menu-item>
+				  	<a routerLink="/dashboard">Général</a>
+				  </button>
+				  <button mat-menu-item>
+				  	<a routerLink="/summary">Sommaire</a>
+				  </button>
+				  <button mat-menu-item>
+				  	<a routerLink="/skills">Compétences</a>
+				  </button>
+				  <button mat-menu-item>
+				  	<a routerLink="/timeline">Parcours</a>
+				  </button>
+				  <button mat-menu-item>
+				  	<a routerLink="/download">Téléchargement</a>
+				  </button>
+				</mat-menu>
+		    	<button mat-button [matMenuTriggerFor]="menuCrea">Blog</button>
+				<mat-menu #menuCrea="matMenu">
+				  <button mat-menu-item>
+				  	<a routerLink="/website">Articles</a>
+				  </button>
+				</mat-menu>
+			</div>
+		</mat-sidenav>
+		<mat-sidenav-content class="burger">
+			<button mat-button (click)="sidenav.toggle()"><i class="fa fa-bars"></i></button>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+    <div class="wrapper">
+		<div class='menu-desktop'>
+			<button mat-button [matMenuTriggerFor]="menuCV">CV</button>
+			<mat-menu #menuCV="matMenu">
+			  <button mat-menu-item>
+			  	<a routerLink="/dashboard">Général</a>
+			  </button>
+			  <button mat-menu-item>
+			  	<a routerLink="/summary">Sommaire</a>
+			  </button>
+			  <button mat-menu-item>
+			  	<a routerLink="/skills">Compétences</a>
+			  </button>
+			  <button mat-menu-item>
+			  	<a routerLink="/timeline">Parcours</a>
+			  </button>
+			  <button mat-menu-item>
+			  	<a routerLink="/download">Téléchargement</a>
+			  </button>
+			</mat-menu>
+	    	<button mat-button [matMenuTriggerFor]="menuCrea">Blog</button>
+			<mat-menu #menuCrea="matMenu">
+			  <button mat-menu-item>
+			  	<a routerLink="/website">Articles</a>
+			  </button>
+			</mat-menu>
+		</div>
+    </div>
+</header>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+<app-footer></app-footer>

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { Contact } from './contact';
+import { Competence } from './competence';
 import { MessageService } from './message.service';
 
 const httpOptions = {
@@ -13,21 +13,21 @@ const httpOptions = {
 };
 
 @Injectable()
-export class ContactService {
+export class CompetenceService {
 
-    private contactWSUrl = 'http://localhost:8080/repApp';  // URL to web api
-  
+    private contactWSUrl = 'http://localhost:8080/webservice';  // URL to web api
+
   constructor(
     private http: HttpClient,
     private messageService: MessageService) { }
 
-  getContact(id: number): Observable<Contact> {
-    const url = this.contactWSUrl +'/get-by-id?id=' + id;
+  getContact(id: number): Observable<Competence> {
+    const url = this.contactWSUrl + '/competence/get-by-id?id=' + id;
     this.log(url);
-    return this.http.get<Contact>(url)
+    return this.http.get<Competence>(url)
                .pipe(
-                  tap(_ => this.log(`contact recupere id=${id}`)),
-                  catchError(this.handleError<Contact>(`getContact id=${id}`))
+                  tap(_ => this.log(`Competence recupere id=${id}`)),
+                  catchError(this.handleError<Competence>(`getCompetence id=${id}`))
                 );
   }
 
@@ -44,7 +44,13 @@ export class ContactService {
       console.error(error); // log to console instead
 
       // TODO: better job of transforming error for user consumption
-      this.log(`${operation} failed: message ->${error.message} type->${error.type} name->${error.name} headers->${error.headers.keys()} status->${error.status} statusText->${error.statusText} url->${error.url}`);
+      this.log(`${operation} failed: message ->${error.message}
+                                     type->${error.type}
+                                     name->${error.name}
+                                     headers->${error.headers.keys()}
+                                     status->${error.status}
+                                     statusText->${error.statusText}
+                                     url->${error.url}`);
 
       // Let the app keep running by returning an empty result.
       return of(result as T);
@@ -53,7 +59,7 @@ export class ContactService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    this.messageService.add('HeroService: ' + message);
+    this.messageService.add('GuillaumeGeek : ' + message);
   }
-  
+
 }

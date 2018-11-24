@@ -1,0 +1,30 @@
+nav ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+mat-card-title, mat-card-subtitle, .skill-technical-detail, .skill-soft-detail {
+	text-align: left;
+}
+
+.skill {
+	text-align:center;
+}
+
+.skill-technical-card, .skill-soft-card {
+	max-width: 400px;
+	min-width: 300px;
+	width: 40%;
+    display: inline-block;
+}
+
+@media(max-width:875px) {
+	 .skill-technical-card, .skill-soft-card {
+		max-width: calc(100% - 100px);
+		min-width: calc(100% - 100px);
+		width: calc(100% - 100px);
+        width: -moz-calc(100% - 100px);
+        width: -webkit-calc(100% - 100px);
+	    display: inline-block;
+	}
+}

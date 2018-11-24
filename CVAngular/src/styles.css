@@ -1,1 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
+/****************************/
+/** Imports **/
+/****************************/
+@import url(../node_modules/font-awesome/css/font-awesome.min.css);
+/* barre de progression */
+/*@import url(../node_modules/primeng/resources/themes/lightness/theme.css);*/
+/*@import url(../node_modules/primeng/resources/primeng.min.css);*/
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+/*@import '~@angular/material/prebuilt-themes/pink-bluegrey.css';*/
+/*@import '~@angular/material/prebuilt-themes/indigo-pink.css';*/
+/*@import '~@angular/material/prebuilt-themes/purple-green.css';*/
+
+/* Général */
+*{
+    margin: auto;
+    /*padding: 0;*/
+}
+
+header, footer {
+    width: 80%;
+    padding: 10px;
+	background-color: #E7F8FF;
+}
+
+/* HEADER */
+header {
+    height: 50px;
+}
+
+header div button {
+	margin: 0 auto;	
+}
+
+/* BODY */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+	background-image:url(assets/bois.jpg);
+}
+
+p{
+    line-height: 20px;
+    color: #4D5B99;
+}
+
+.summary ul {
+    /* retirer les points de la liste */
+    list-style: none;
+}
+
+a {
+    /* retire la decoration par défaut */
+    text-decoration: none;
+    color: #CCAEA4;
+}
+
+/* class */
+.wrapper  {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px 10px;
+    background-color: #E7F8FF;
+}
+
+.candidate-img {
+	height:230px;
+	width:230px;
+	border-radius:50%;
+	background:url(assets/tux.png);
+	background-size:cover;
+	margin:0 auto;
+}
+
+/* FOOTER */
+footer{
+    height: 100px;
+    margin: 0 auto;
+    color: #fff;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.copyright {
+    text-align: center;
+    font-weight: bold;
+    padding-top: 30px;
+    color: #4D5B99;
+}

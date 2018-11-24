@@ -1,29 +1,29 @@
-/* AppComponent's private CSS styles */
-h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
+.menu-mobile {
+  display: none;
 }
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
-}
-nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
-  color: #607D8B;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
-}
-nav a.active {
-  color: #039be5;
+
+@media(max-width:875px) {
+	.menu-mobile {
+	  position: relative;
+	  top: 0;
+	  bottom: auto;
+	  left: 0;
+	  right: auto;
+	  background-color: rgba(117, 190, 218, 0.0);
+	  display:contents;
+	}
+	.burger button {
+		position: relative;
+		left: 0px;
+  		top: 0px;
+  		width: 8em;
+  		/*margin-top: -2.5em;*/
+  		background-color: #fff;
+	}
+	.menu-desktop {
+		display: none;
+	}
+	.menu-vertical .mat-button {
+		display: block;
+	}
 }

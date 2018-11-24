@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
+import { MatMenuTrigger } from '@angular/material/menu';
 import 'rxjs/add/operator/map';
 
 @Component({
@@ -8,8 +9,15 @@ import 'rxjs/add/operator/map';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Tour of Heroes';
+  @ViewChild(MatMenuTrigger) trigger: MatMenuTrigger;
+  events: string[] = [];
+  opened: boolean;
+
+  title = 'Mon CV';
 
   constructor() { }
 
+  someMethod() {
+    this.trigger.openMenu();
+  }
 }
